@@ -1,307 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulhamid Stanikzay | Portfolio</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tab Icon Link -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abdulhamid Stanikzay — Hardware Engineer, IT Systems & Digital Branding specialist." />
+  <title>Abdulhamid Stanikzay | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700&family=DM+Mono:wght@300;400&display=swap&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .portfolio-switch-container {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 1.5rem;
+    }
+    .portfolio-switch-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      color: #888;
+      margin-right: 0.5rem;
+      text-transform: uppercase;
+    }
+    .portfolio-switch {
+      position: relative;
+      display: inline-block;
+      width: 42px;
+      height: 22px;
+    }
+    .portfolio-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .portfolio-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      transition: .3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portfolio-slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #e8ff47;
+      transition: .3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    input:checked + .portfolio-slider {
+      background-color: #ff5c2b;
+      border-color: #ff5c2b;
+    }
+    input:checked + .portfolio-slider:before {
+      transform: translateX(20px);
+      background-color: #fff;
+    }
+    @media (max-width: 900px) {
+      .portfolio-switch-container {
+        margin-right: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- CREATIVE TRICK 1: Dynamic Top Scroll Progress Bar Indicator -->
-    <div class="scroll-progress-bar" id="scrollBar"></div>
+  <div id="cursor"></div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#" class="logo">HAMID.PORTFOLIO</a>
-        
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Open Menu">
-            <i class="fas fa-bars"></i>
-        </button>
+  <nav id="navbar">
+    <a href="#" class="nav-logo">H<span>.</span>STANIKZAY</a>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li>
-                <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </li>
-        </ul>
-    </nav>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    <!-- Hero / Introduction Section -->
-    <header id="home">
-        <!-- CREATIVE TRICK 2: Animated Gradient Typography -->
-        <h1 class="hero-title">Hi, I'm <span class="gradient-text">Abdulhamid Stanikzay</span></h1>
-        
-        <!-- CREATIVE TRICK 3: Live Automated JavaScript Typewriter Interface -->
-        <p class="typewriter-sub">Specialist in <span id="typed-text"></span><span class="cursor">|</span></p>
-        
-        <p class="hero-bio">I specialize in hardware diagnostics, computer systems layout, and digital storefront branding. I build functional, high-performance solutions.</p>
-        <a href="#works" class="btn">View My Work</a>
-    </header>
+    <div class="portfolio-switch-container">
+      <span class="portfolio-switch-label">V2</span>
+      <label class="portfolio-switch">
+        <input type="checkbox" checked onclick="window.location.href='alternative.html'">
+        <span class="portfolio-slider"></span>
+      </label>
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About & Core Skills</h2>
-        <div class="about-container">
-            <p class="about-bio">
-                Holding a professional diploma in the computer field, I specialize in technical troubleshooting, hardware architecture diagnostics, and digital system implementations. I help bridge the gap between complex hardware configurations and professional online brand presence.
-            </p>
-            <div class="skills-grid">
-                <span class="skill-badge"><i class="fas fa-microchip"></i> Hardware Troubleshooting</span>
-                <span class="skill-badge"><i class="fas fa-layer-group"></i> Component Diagnostics</span>
-                <span class="skill-badge"><i class="fas fa-code"></i> Web Architecture</span>
-                <span class="skill-badge"><i class="fas fa-store"></i> Digital Branding</span>
-            </div>
-        </div>
-    </section>
+    <a href="#contact" class="nav-cta">Hire Me</a>
 
-    <!-- Services Showcase Section -->
-    <section id="services">
-        <h2>What I Do</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-tools"></i></div>
-                <h3>Hardware Repair & Diagnostics</h3>
-                <p>Expert isolation and manual circuit repair for consumer tech, laptops, power circuits, and system boards.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>IT Infrastructure & Systems</h3>
-                <p>Deploying tailored operating frameworks, unlocking firmwares, and configuring custom computer system environments.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fas fa-ad"></i></div>
-                <h3>Digital Storefront Branding</h3>
-                <p>Creating professional brand identities, custom asset packages, and visual materials optimization for e-commerce accessories.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dynamic Works/Portfolio Section -->
-    <section id="works">
-        <h2>My Works</h2>
-        
-        <!-- Category Filters -->
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="tech">Tech & Hardware</button>
-            <button class="filter-btn" data-filter="design">Design & Branding</button>
-            <button class="filter-btn" data-filter="web">Web Dev</button>
-        </div>
-
-        <!-- Projects Container -->
-        <div class="projects-grid" id="projectsContainer">
-            <!-- Project 1: Tech -->
-            <div class="project-card" data-category="tech">
-                <div class="project-img" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6);"><i class="fas fa-microchip"></i></div>
-                <div class="project-info">
-                    <span class="project-tag">Tech & Hardware</span>
-                    <h3>Hardware Diagnostics System</h3>
-                    <p>Advanced circuit troubleshooting and optimization blueprints for custom power electronics.</p>
-                </div>
-            </div>
-
-            <!-- Project 2: Design -->
-            <div class="project-card" data-category="design">
-                <div class="project-img" style="background: linear-gradient(135deg, #4c1d95, #8b5cf6);"><i class="fas fa-palette"></i></div>
-                <div class="project-info">
-                    <span class="project-tag">Design & Branding</span>
-                    <h3>Brand Identity: Pro Accessories</h3>
-                    <p>A complete visual profile including high-impact logos and social media assets for modern storefronts.</p>
-                </div>
-            </div>
-
-            <!-- Project 3: Web -->
-            <div class="project-card" data-category="web">
-                <div class="project-img" style="background: linear-gradient(135deg, #064e3b, #10b981);"><i class="fas fa-code"></i></div>
-                <div class="project-info">
-                    <span class="project-tag">Web Development</span>
-                    <h3>E-Commerce Interface</h3>
-                    <p>A clean, completely responsive front-end landing page built for seamless accessory distribution.</p>
-                </div>
-            </div>
-            
-            <!-- Project 4: Tech -->
-            <div class="project-card" data-category="tech">
-                <div class="project-img" style="background: linear-gradient(135deg, #b91c1c, #ef4444);"><i class="fas fa-tools"></i></div>
-                <div class="project-info">
-                    <span class="project-tag">Tech & Hardware</span>
-                    <h3>Firmware & Board Unlocking</h3>
-                    <p>Custom setups and software deployment architectures for display controllers and smart mainboards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Get In Touch</h2>
-        <div class="contact-container">
-            <form action="https://formspree.io/f/mjgzjnlo" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
-                </div>
-                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Abdulhamid Stanikzay. All Rights Reserved.</p>
-        <p>WEBSITE UNDER CONSTRUCTION</p>
-    </footer>
-
-    <!-- Smart Back-to-Top Floating Button -->
-    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll up to top">
-        <i class="fas fa-arrow-up"></i>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
     </button>
+  </nav>
 
-    <!-- JavaScript Engine -->
-    <script>
-        // 1. Scroll Progress Bar Engine
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('scrollBar').style.width = scrolled + '%';
+  <div class="nav-mobile-menu" id="mobileMenu">
+    <a href="#about"    onclick="closeMenu()">About</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#works"    onclick="closeMenu()">Works</a>
+    <a href="#contact"  onclick="closeMenu()">Contact</a>
+    <a href="#contact"  onclick="closeMenu()" class="nav-cta-mobile">Hire Me</a>
+  </div>
+
+  <section id="hero">
+    <div class="hero-bg-line"></div>
+
+    <div class="hero-tag">
+      <div>Available for work</div>
+      <div><span class="dot">●</span> Open to projects</div>
+    </div>
+
+    <div class="hero-counter">Portfolio 2026</div>
+
+    <h1 class="hero-title reveal">
+      Abdul<em>hamid</em><br>
+      <span class="outline">Stanik</span>zay
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-desc reveal reveal-delay-1">
+        <strong>Hardware Engineer · IT Systems · Digital Branding.</strong><br>
+        I build functional, high-performance tech solutions — from circuit-level diagnostics to digital storefronts that convert.
+      </p>
+      <div class="hero-actions reveal reveal-delay-2">
+        <a href="#works" class="btn-primary">
+          View Work
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Contact</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">Scroll</div>
+  </section>
+
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-inner">
+      <span class="marquee-item">Hardware Diagnostics</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">IT Infrastructure</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">Digital Branding</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">Firmware Deployment</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">E-Commerce Storefronts</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">Circuit Repair</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">Hardware Diagnostics</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">IT Infrastructure</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">Digital Branding</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">Firmware Deployment</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">E-Commerce Storefronts</span>
+      <span class="marquee-item accent">✦</span>
+      <span class="marquee-item">Circuit Repair</span>
+      <span class="marquee-item accent">✦</span>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="about-left">
+      <div class="section-label reveal">About</div>
+      <h2 class="section-title reveal reveal-delay-1">The Engineer<br>Behind the Work</h2>
+      <p class="about-text reveal reveal-delay-2">
+        I hold a <strong>professional diploma in computer systems</strong> and have spent years working at the intersection of hardware and digital identity — two fields most people keep separate, but that I've learned to combine.
+      </p>
+      <p class="about-text reveal reveal-delay-3">
+        Whether I'm tracing a fault on a <strong>system board</strong>, configuring a custom OS, or building a brand kit for an e-commerce accessories shop — the approach is the same: <strong>precise, methodical, and built to last.</strong>
+      </p>
+      <div class="about-badges reveal reveal-delay-4">
+        <span class="badge">Hardware Troubleshooting</span>
+        <span class="badge">Component Diagnostics</span>
+        <span class="badge">Web Architecture</span>
+        <span class="badge">Digital Branding</span>
+        <span class="badge">Firmware Unlocking</span>
+        <span class="badge">OS Configuration</span>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="stat-row reveal">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Years in Hardware & Tech</div>
+      </div>
+      <div class="stat-row reveal reveal-delay-1">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Devices Repaired & Diagnosed</div>
+      </div>
+      <div class="stat-row reveal reveal-delay-2">
+        <div class="stat-number">12+</div>
+        <div class="stat-label">Brand Identities Delivered</div>
+      </div>
+      <div class="stat-row reveal reveal-delay-3">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Client Satisfaction Rate</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="services-header">
+      <div>
+        <div class="section-label reveal">What I Do</div>
+        <h2 class="section-title reveal reveal-delay-1">Services</h2>
+      </div>
+      <a href="#contact" class="btn-ghost reveal reveal-delay-2">Start a Project →</a>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="4" y="10" width="32" height="22" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 16h12M14 20h8M14 24h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="28" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 32v4M14 36h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="service-title">Hardware Repair & Diagnostics</div>
+        <div class="service-desc">Expert-level circuit fault isolation and manual repair for consumer tech, laptops, power rails, and complex system boards.</div>
+        <svg class="service-arrow" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 23L23 5M23 5H10M23 5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="6" y="8" width="28" height="20" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M6 14h28" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 20l3 3 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 28v4M12 32h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="service-title">IT Infrastructure & Systems</div>
+        <div class="service-desc">Custom OS deployments, firmware unlocking, and tailored computing environments for individuals and small businesses.</div>
+        <svg class="service-arrow" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 23L23 5M23 5H10M23 5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="18" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M20 10V8M20 28v2M28 18h2M10 18H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="20" cy="18" r="3" fill="currentColor"/>
+        </svg>
+        <div class="service-title">Digital Storefront Branding</div>
+        <div class="service-desc">Full brand identity packages — logos, visual systems, and social asset kits designed for e-commerce accessories businesses.</div>
+        <svg class="service-arrow" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M5 23L23 5M23 5H10M23 5V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="works-header">
+      <div>
+        <div class="section-label reveal">Portfolio</div>
+        <h2 class="section-title reveal reveal-delay-1">Selected Works</h2>
+      </div>
+      <div class="works-filters reveal reveal-delay-2">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tech">Tech</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+      </div>
+    </div>
+
+    <div class="works-grid" id="worksGrid">
+
+      <div class="work-card reveal" data-category="tech">
+        <div class="work-thumb">
+          <div class="work-visual">
+            <svg viewBox="0 0 160 160" fill="none" style="width:120px" aria-hidden="true">
+              <rect x="40" y="40" width="80" height="80" stroke="#e8ff47" stroke-width="1"/>
+              <rect x="54" y="54" width="52" height="52" stroke="#e8ff47" stroke-width="0.5" opacity="0.4"/>
+              <line x1="10" y1="80" x2="40" y2="80" stroke="#e8ff47" stroke-width="1"/>
+              <line x1="120" y1="80" x2="150" y2="80" stroke="#e8ff47" stroke-width="1"/>
+              <line x1="80" y1="10" x2="80" y2="40" stroke="#e8ff47" stroke-width="1"/>
+              <line x1="80" y1="120" x2="80" y2="150" stroke="#e8ff47" stroke-width="1"/>
+              <circle cx="80" cy="80" r="6" fill="#e8ff47"/>
+              <circle cx="40" cy="40" r="3" fill="#e8ff47" opacity="0.5"/>
+              <circle cx="120" cy="40" r="3" fill="#e8ff47" opacity="0.5"/>
+              <circle cx="40" cy="120" r="3" fill="#e8ff47" opacity="0.5"/>
+              <circle cx="120" cy="120" r="3" fill="#e8ff47" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="work-info">
+            <div class="work-cat">Tech &amp; Hardware</div>
+            <div class="work-name">Hardware Diagnostics System</div>
+          </div>
+          <div class="work-link" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H5M14 2V11" stroke="#0b0b0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card reveal reveal-delay-1" data-category="branding">
+        <div class="work-thumb">
+          <div class="work-visual">
+            <svg viewBox="0 0 160 160" fill="none" style="width:110px" aria-hidden="true">
+              <polygon points="80,18 138,112 22,112" stroke="#ff5c2b" stroke-width="1.5" fill="none"/>
+              <polygon points="80,38 118,102 42,102" stroke="#ff5c2b" stroke-width="0.5" fill="none" opacity="0.4"/>
+              <circle cx="80" cy="78" r="14" stroke="#e8ff47" stroke-width="1.5" fill="none"/>
+              <circle cx="80" cy="78" r="4" fill="#e8ff47"/>
+            </svg>
+          </div>
+          <div class="work-info">
+            <div class="work-cat">Design &amp; Branding</div>
+            <div class="work-name">Brand Identity: Pro Accessories</div>
+          </div>
+          <div class="work-link" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H5M14 2V11" stroke="#0b0b0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card reveal reveal-delay-2" data-category="web">
+        <div class="work-thumb" style="background:#0c0e12;">
+          <div class="work-visual" style="width:100%">
+            <svg viewBox="0 0 400 160" fill="none" style="width:88%;max-width:400px" aria-hidden="true">
+              <rect x="10" y="10" width="380" height="140" rx="3" stroke="#e8ff47" stroke-width="0.5" opacity="0.2"/>
+              <rect x="24" y="24" width="60" height="112" rx="2" stroke="#e8ff47" stroke-width="1" fill="#e8ff47" fill-opacity="0.03"/>
+              <rect x="96" y="24" width="140" height="44" rx="2" stroke="#e8ff47" stroke-width="0.7" fill="none"/>
+              <rect x="96" y="76" width="64" height="26" rx="2" fill="#e8ff47" fill-opacity="0.12"/>
+              <rect x="248" y="24" width="132" height="78" rx="2" stroke="#333" stroke-width="0.5" fill="#ff5c2b" fill-opacity="0.04"/>
+              <line x1="96" y1="44" x2="228" y2="44" stroke="#e8ff47" stroke-width="0.5" opacity="0.35"/>
+              <line x1="96" y1="58" x2="200" y2="58" stroke="#e8ff47" stroke-width="0.5" opacity="0.18"/>
+            </svg>
+          </div>
+          <div class="work-info">
+            <div class="work-cat">Web Development</div>
+            <div class="work-name">E-Commerce Interface</div>
+          </div>
+          <div class="work-link" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H5M14 2V11" stroke="#0b0b0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card reveal reveal-delay-3" data-category="tech">
+        <div class="work-thumb" style="background:#0e100e;">
+          <div class="work-visual">
+            <svg viewBox="0 0 160 160" fill="none" style="width:110px" aria-hidden="true">
+              <rect x="28" y="48" width="104" height="64" rx="3" stroke="#e8ff47" stroke-width="1.5"/>
+              <rect x="44" y="64" width="72" height="32" rx="1" stroke="#e8ff47" stroke-width="0.5" opacity="0.35"/>
+              <path d="M60 80h40M68 74l-8 6 8 6" stroke="#e8ff47" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 80H10M132 80H150" stroke="#e8ff47" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="work-info">
+            <div class="work-cat">Tech &amp; Hardware</div>
+            <div class="work-name">Firmware &amp; Board Unlocking</div>
+          </div>
+          <div class="work-link" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 14L14 2M14 2H5M14 2V11" stroke="#0b0b0b" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="process-left">
+      <div class="section-label reveal">How I Work</div>
+      <h2 class="section-title reveal reveal-delay-1">My<br>Process</h2>
+      <p class="process-sub reveal reveal-delay-2">Every project I take on follows a deliberate process — no guesswork, no shortcuts.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Diagnose &amp; Understand</div>
+          <div class="step-desc">Before anything else, I assess the full scope — whether it's a failing capacitor or a brand without a visual system.</div>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Research &amp; Architect</div>
+          <div class="step-desc">I map out the best path: component sourcing, system architecture, or design direction. Every decision is backed by knowledge, not templates.</div>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Build &amp; Execute</div>
+          <div class="step-desc">Hands-on implementation — circuit repair, firmware deployment, or brand asset production — with attention to every detail.</div>
+        </div>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Test &amp; Deliver</div>
+          <div class="step-desc">Nothing ships without thorough validation. I test under real conditions and only hand over work I'd put my name on.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+  <div class="contact-left">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-title reveal reveal-delay-1">Let's Work<br>Together</h2>
+    <p class="contact-sub reveal reveal-delay-2">
+      Have a device that needs fixing, a system to configure, or a brand to build? I'm available for freelance projects and consultations.
+    </p>
+    <div class="contact-items reveal reveal-delay-3">
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <div>
+          <span class="contact-label">Email</span>
+          <div class="contact-value"><a href="mailto:abdulhamidstanikzay@gmail.com" style="color: inherit; text-decoration: none;">abdulhamidstanikzay@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m22 2-7 20-4-9-9-4Z"/>
+          <path d="M22 2 11 13"/>
+        </svg>
+        <div>
+          <span class="contact-label">Telegram</span>
+          <div class="contact-value">@abdulhamidstanikzay</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+        </svg>
+        <div>
+          <span class="contact-label">Instagram</span>
+          <div class="contact-value">@abdul_hamid_stanikzai</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M10 6v5l3 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="contact-label">Response Time</span>
+          <div class="contact-value">Usually within 24 hours</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form action="https://formspree.io/f/mjgzjnlo" method="POST" class="contact-form reveal reveal-delay-2">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fname">Name</label>
+        <input id="fname" name="name" type="text" placeholder="Your name" required />
+      </div>
+      <div class="form-group">
+        <label for="femail">Email</label>
+        <input id="femail" name="email" type="text" placeholder="your@email.com" required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fservice">Service</label>
+      <input id="fservice" name="service" type="text" placeholder="Hardware repair, IT setup, branding..." />
+    </div>
+    <div class="form-group">
+      <label for="fmsg">Message</label>
+      <textarea id="fmsg" name="message" placeholder="Tell me about your project..." required></textarea>
+    </div>
+    <button class="form-submit" type="submit">
+      Send Message
+      <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+  </form>
+</section>
+
+  <footer>
+    <div class="footer-logo">H<span>.</span>STANIKZAY</div>
+
+    <div class="footer-socials">
+
+      <a href="https://t.me/abdulhamidstanikzay" class="social-link" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m22 2-7 20-4-9-9-4Z"/>
+          <path d="M22 2 11 13"/>
+        </svg>
+        Telegram
+      </a>
+
+      <a href="https://www.instagram.com/abdul_hamid_stanikzai/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+"        </svg>
+        Instagram
+      </a>
+
+    </div>
+
+    <div class="footer-copy">© 2026 Abdulhamid Stanikzay. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // ── Cursor (desktop only, snap = no lag) ──
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    const cursor = document.getElementById('cursor');
+    if (!isTouchDevice && cursor) {
+      document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      });
+      document.querySelectorAll('a, button, .work-card, .service-card, input, textarea').forEach(el => {
+        el.addEventListener('mouseenter', () => { cursor.style.width = '18px'; cursor.style.height = '18px'; });
+        el.addEventListener('mouseleave', () => { cursor.style.width = '10px'; cursor.style.height = '10px'; });
+      });
+    } else if (cursor) {
+      cursor.style.display = 'none';
+    }
+
+    // ── Navbar scroll style ──
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // ── Mobile menu ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+
+    // ── Scroll reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Hero reveals on load
+    setTimeout(() => {
+      document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 130);
+      });
+    }, 80);
+
+    // ── Works filter (fully functional) ──
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const workCards  = document.querySelectorAll('.work-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        workCards.forEach(card => {
+          const cat = card.dataset.category;
+          const show = filter === 'all' || cat === filter;
+          if (show) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
         });
+      });
+    });
+  </script>
 
-        // 2. Automated Typewriter Loop Setup
-        const phrases = ["Hardware Diagnostics.", "Computer Systems Layout.", "Digital Branding.", "Web Development."];
-        let phraseIdx = 0;
-        let letterIdx = 0;
-        let currentText = '';
-        let isDeleting = false;
-        const typingTarget = document.getElementById('typed-text');
-
-        function playTypewriter() {
-            const fullPhrase = phrases[phraseIdx];
-            
-            if (isDeleting) {
-                currentText = fullPhrase.substring(0, letterIdx - 1);
-                letterIdx--;
-            } else {
-                currentText = fullPhrase.substring(0, letterIdx + 1);
-                letterIdx++;
-            }
-
-            typingTarget.innerHTML = currentText;
-
-            let typeSpeed = isDeleting ? 40 : 80;
-
-            if (!isDeleting && currentText === fullPhrase) {
-                typeSpeed = 1800; // Pause long enough at the end of the phrase
-                isDeleting = true;
-            } else if (isDeleting && currentText === '') {
-                isDeleting = false;
-                phraseIdx = (phraseIdx + 1) % phrases.length;
-                typeSpeed = 400; // Brief delay before typing the next phrase
-            }
-
-            setTimeout(playTypewriter, typeSpeed);
-        }
-        // Initialize Typewriter execution loop
-        document.addEventListener("DOMContentLoaded", () => setTimeout(playTypewriter, 500));
-
-        // 3. Responsive Mobile Menu Drawer Logic
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-active');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.className = navLinks.classList.contains('mobile-active') ? 'fas fa-times' : 'fas fa-bars';
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('mobile-active');
-                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
-            });
-        });
-
-        // 4. Theme Preference Cache Memory Control
-        const themeBtn = document.getElementById('themeBtn');
-        const body = document.body;
-        
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.setAttribute('data-theme', 'light');
-            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            if (currentTheme === 'light') {
-                body.removeAttribute('data-theme');
-                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.setAttribute('data-theme', 'light');
-                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // 5. Dynamic Portfolio Project Filtering Logic
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filterValue = button.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
-                        setTimeout(() => card.style.opacity = '1', 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // 6. Scroll to Top Fade In/Out Controller
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
 </body>
-</html>
+</html> 
